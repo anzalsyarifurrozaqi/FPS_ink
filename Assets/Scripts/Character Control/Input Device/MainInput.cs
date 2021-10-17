@@ -35,7 +35,7 @@ public class @MainInput : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""ATTACK"",
+                    ""name"": ""SHOT"",
                     ""type"": ""Button"",
                     ""id"": ""3bf71b90-6e58-450b-b195-422347add6b2"",
                     ""expectedControlType"": ""Button"",
@@ -114,7 +114,7 @@ public class @MainInput : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ATTACK"",
+                    ""action"": ""SHOT"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -149,7 +149,7 @@ public class @MainInput : IInputActionCollection, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_MOVE = m_Player.FindAction("MOVE", throwIfNotFound: true);
         m_Player_LOOK = m_Player.FindAction("LOOK", throwIfNotFound: true);
-        m_Player_ATTACK = m_Player.FindAction("ATTACK", throwIfNotFound: true);
+        m_Player_SHOT = m_Player.FindAction("SHOT", throwIfNotFound: true);
         m_Player_AIM = m_Player.FindAction("AIM", throwIfNotFound: true);
     }
 
@@ -202,7 +202,7 @@ public class @MainInput : IInputActionCollection, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_MOVE;
     private readonly InputAction m_Player_LOOK;
-    private readonly InputAction m_Player_ATTACK;
+    private readonly InputAction m_Player_SHOT;
     private readonly InputAction m_Player_AIM;
     public struct PlayerActions
     {
@@ -210,7 +210,7 @@ public class @MainInput : IInputActionCollection, IDisposable
         public PlayerActions(@MainInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @MOVE => m_Wrapper.m_Player_MOVE;
         public InputAction @LOOK => m_Wrapper.m_Player_LOOK;
-        public InputAction @ATTACK => m_Wrapper.m_Player_ATTACK;
+        public InputAction @SHOT => m_Wrapper.m_Player_SHOT;
         public InputAction @AIM => m_Wrapper.m_Player_AIM;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -227,9 +227,9 @@ public class @MainInput : IInputActionCollection, IDisposable
                 @LOOK.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLOOK;
                 @LOOK.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLOOK;
                 @LOOK.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLOOK;
-                @ATTACK.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnATTACK;
-                @ATTACK.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnATTACK;
-                @ATTACK.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnATTACK;
+                @SHOT.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSHOT;
+                @SHOT.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSHOT;
+                @SHOT.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSHOT;
                 @AIM.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAIM;
                 @AIM.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAIM;
                 @AIM.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAIM;
@@ -243,9 +243,9 @@ public class @MainInput : IInputActionCollection, IDisposable
                 @LOOK.started += instance.OnLOOK;
                 @LOOK.performed += instance.OnLOOK;
                 @LOOK.canceled += instance.OnLOOK;
-                @ATTACK.started += instance.OnATTACK;
-                @ATTACK.performed += instance.OnATTACK;
-                @ATTACK.canceled += instance.OnATTACK;
+                @SHOT.started += instance.OnSHOT;
+                @SHOT.performed += instance.OnSHOT;
+                @SHOT.canceled += instance.OnSHOT;
                 @AIM.started += instance.OnAIM;
                 @AIM.performed += instance.OnAIM;
                 @AIM.canceled += instance.OnAIM;
@@ -257,7 +257,7 @@ public class @MainInput : IInputActionCollection, IDisposable
     {
         void OnMOVE(InputAction.CallbackContext context);
         void OnLOOK(InputAction.CallbackContext context);
-        void OnATTACK(InputAction.CallbackContext context);
+        void OnSHOT(InputAction.CallbackContext context);
         void OnAIM(InputAction.CallbackContext context);
     }
 }

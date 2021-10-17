@@ -8,7 +8,7 @@ namespace Ink_Project {
         public Vector2 Move;
         public Vector2 Look;
         public bool Aim;
-        public bool Attack;        
+        public bool Shot;
 
         [Header("SupbComponens")]
         public CharacterSetup CharacterSetup;

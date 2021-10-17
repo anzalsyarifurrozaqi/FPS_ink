@@ -1,9 +1,7 @@
 using UnityEngine;
 
-namespace Anzal.Ink
-{
-    public class Paintable2 : MonoBehaviour
-    {
+namespace Ink_Project {
+    public class Paintable2 : MonoBehaviour {
         const int TEXTURE_SIZE = 1024;
 
         public float extendsIslandOffset = 1;
@@ -23,8 +21,7 @@ namespace Anzal.Ink
         public RenderTexture getSupport() => supportTexture;
         public Renderer getRenderer() => rend;
 
-        private void Start()
-        {
+        private void Start() {
             maskRenderTexture = new RenderTexture(TEXTURE_SIZE, TEXTURE_SIZE, 0);
             maskRenderTexture.filterMode = FilterMode.Bilinear;
 
@@ -40,11 +37,10 @@ namespace Anzal.Ink
             rend = GetComponent<Renderer>();
             rend.material.SetTexture(maskTextureID, extendIslandsRenderTexture);
 
-            PaintManager2.instance.initTextures(this);
+            PaintManager2.Instance.initTextures(this);
         }
 
-        private void OnDisable()
-        {
+        private void OnDisable() {
             maskRenderTexture.Release();
             uvIslandsRenderTexture.Release();
             extendIslandsRenderTexture.Release();

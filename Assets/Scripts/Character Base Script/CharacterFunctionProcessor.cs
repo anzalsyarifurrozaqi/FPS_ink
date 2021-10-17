@@ -2,26 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Ink_Project
-{
-    public class CharacterFunctionProcessor : MonoBehaviour
-    {
+namespace Ink_Project {
+    public class CharacterFunctionProcessor : MonoBehaviour {
         public Dictionary<System.Type, CharacterFunction> DicFunction = new Dictionary<System.Type, CharacterFunction>();
         public CharacterFunctionList FunctionListType;
 
-        private void Awake()
-        {
-            if (FunctionListType != null)
-            {
+        private void Awake() {
+            if (FunctionListType != null) {
                 List<System.Type> function = FunctionListType.GetList();
 
-                foreach (System.Type t in function)
-                {
+                foreach (System.Type t in function) {
                     AddFunction(t);
                 }
             }
-            else
-            {
+            else {
                 Debug.Log($"Loading Default Character Function {this.transform.root.gameObject.name}");
                 SetDefaultFunction();
             }
@@ -30,19 +24,17 @@ namespace Ink_Project
             control.InitalizeCharacter();
         }
 
-        void SetDefaultFunction()
-        {
+        void SetDefaultFunction() {
             AddFunction(typeof(InitCharacter));
             AddFunction(typeof(FaceForward));
             AddFunction(typeof(MoveTransformForward));
             AddFunction(typeof(Aim));
-            //AddFunction(typeof(Shoot));
+            AddFunction(typeof(MoveTransformAim));
+            AddFunction(typeof(Shoot));
         }
 
-        void AddFunction(System.Type type)
-        {
-            if (type.IsSubclassOf(typeof(CharacterFunction)))
-            {
+        void AddFunction(System.Type type) {
+            if (type.IsSubclassOf(typeof(CharacterFunction))) {
                 GameObject obj = new GameObject();
                 obj.transform.parent = this.transform;
                 obj.transform.localPosition = Vector3.zero;

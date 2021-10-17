@@ -22,7 +22,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "ATTACK",
+                    "name": "SHOT",
                     "type": "Button",
                     "id": "3bf71b90-6e58-450b-b195-422347add6b2",
                     "expectedControlType": "Button",
@@ -101,7 +101,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ATTACK",
+                    "action": "SHOT",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

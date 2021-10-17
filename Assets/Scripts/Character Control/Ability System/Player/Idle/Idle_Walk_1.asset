@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Index: 1
   transitionConditions: 64000000
-  not_Condition: 
+  not_Condition: 66000000

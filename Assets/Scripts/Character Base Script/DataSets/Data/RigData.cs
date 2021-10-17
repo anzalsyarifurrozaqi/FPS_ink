@@ -7,5 +7,6 @@ namespace Ink_Project
     {
         public float AimDuration = 0.3f;
         public Rig WeaponAiming;
+        public Rig HeadAiming;
     }
 }

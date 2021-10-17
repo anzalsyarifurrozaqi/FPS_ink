@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Idle_Shooting_2
   m_EditorClassIdentifier: 
   Index: 2
-  transitionConditions: 65000000
+  transitionConditions: 6500000066000000
   not_Condition: 

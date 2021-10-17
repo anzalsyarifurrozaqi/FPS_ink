@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace Anzal.Ink
+namespace Ink_Project
 {
-    public class PaintManager2 : Singleton2<PaintManager2>
+    public class PaintManager2 : Singleton<PaintManager2>
     {
         public Shader texturePaint;
         public Shader extendIslands;

@@ -21,13 +21,7 @@ namespace Ink_Project {
                 else
                     InputManager.Instance.Aim = true;
             }            
-            
-            //if (_inputReader.isAttacking) {
-            //    InputManager.Instance.Attack = true;
-            //}
-            //else {
-            //    InputManager.Instance.Attack = false;
-            //}            
+            InputManager.Instance.Shot = _inputReader.ReadShot();
         }
     }
 }

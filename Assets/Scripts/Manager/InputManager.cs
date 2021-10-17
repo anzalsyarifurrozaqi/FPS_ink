@@ -18,7 +18,7 @@ namespace Ink_Project {
         public Vector2 Move;
         public Vector2 Look;
         public bool Aim;
-        public bool Attack;
+        public bool Shot;
 
         public void LoadPlayerInput() {
             Object obj = Resources.Load<GameObject>("PlayerInput");

@@ -25,11 +25,11 @@ namespace Ink_Project {
                 control.Aim = false;
             }
 
-            if (InputManager.Instance.Attack) {
-                control.Attack = true;
+            if (InputManager.Instance.Shot) {
+                control.Shot = true;
             }
             else {
-                control.Attack = false;
+                control.Shot = false;
             }
         }
     }

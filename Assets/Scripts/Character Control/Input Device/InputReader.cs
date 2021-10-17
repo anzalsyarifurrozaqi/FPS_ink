@@ -28,8 +28,8 @@ namespace Ink_Project {
             return MainInput.Player.LOOK.ReadValue<Vector2>();
         }
 
-        public bool ReadAttack() {
-            return MainInput.Player.ATTACK.triggered;
+        public bool ReadShot() {
+            return MainInput.Player.SHOT.triggered;
         }
 
         public bool ReadAim() {            

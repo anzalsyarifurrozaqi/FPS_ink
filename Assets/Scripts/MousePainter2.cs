@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Anzal.Ink
+namespace Ink_Project
 {
     public class MousePainter2 : MonoBehaviour
     {
@@ -36,7 +36,7 @@ namespace Anzal.Ink
 
                     if (p != null)
                     {
-                        PaintManager2.instance.paint(p, hit.point, radius, hardness, strength, paintColor);
+                        PaintManager2.Instance.paint(p, hit.point, radius, hardness, strength, paintColor);
                     }
                 }
             }

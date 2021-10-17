@@ -30,8 +30,7 @@ namespace Ink_Project {
             InitCamera();
         }
 
-        public void ActiveCameraFireAim(bool Active) {
-            Debug.Log("active fire aim");
+        public void ActiveCameraFireAim(bool Active) {            
             CameraFireAim.SetActive(Active);
         }
     }

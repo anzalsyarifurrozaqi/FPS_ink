@@ -51,6 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Move: {x: 0, y: 0}
+  Look: {x: 0, y: 0}
+  Aim: 0
   Attack: 0
   CharacterSetup: {fileID: 0}
   CharacterFunctionProcessor: {fileID: 0}
@@ -73,6 +75,13 @@ MonoBehaviour:
     WeaponAiming: {fileID: 7513745697068435889}
   WEAPON_DATA:
     ParentProjectile: {fileID: 4331131948348465524}
+  CAMERA_CHARACTER_DATA:
+    CameraRoot: {fileID: 8865848581392490320}
+  AIM_DATA:
+    AimLayerMask:
+      serializedVersion: 2
+      m_Bits: 1
+    DebugTransform: {fileID: 0}
   arrSets: []
 --- !u!1 &5665099533335425424
 GameObject:
@@ -274,7 +283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8865848581392490320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.203, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5038982224064666579}
